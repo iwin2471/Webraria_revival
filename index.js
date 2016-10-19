@@ -5,13 +5,13 @@ var Sprite = function(filename, is_pattern){
     this.image = null;
     this.pattern = null;
     
-    if(filename != undefined && filename != "" && filename != null){
+    if(filename != undefined){
         this.image = new Image();
         this.image.src = filename;
     } else {
-        console.log('Unable to load sprite');
+        console.log("형식에 맞게 호출되지 않았습니다");
     }
-    
+
     this.draw = function(x, y, w, h){
           if(w == undefined || h == undefined){
               context.drawImage(this.image, x, y, this.image.width, this.image.height);
