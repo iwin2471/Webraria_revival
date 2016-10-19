@@ -29,22 +29,20 @@ var Sprite = function(filename, is_pattern){
     };
 };
 
+//In-Game Settings
+var gameTime = 1;
+var camScale = 2;
+
 function Initialize(){
     context.beginPath();
     context.fillStyle = "black";
-    context.rect(0, 0, 1280, 720);
-    context.fill();
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.scale(camScale, camScale);
     
-    var WALL = "http://gamedesign.wdfiles.com/local--files/spriteart:sprite-art-101-brick-wall-i/sprite_bricks_tutorial_1.png";
-    var CRATE = "http://gamedesign.wdfiles.com/local--files/spriteart:sprite-art-101-brick-wall-i/brick_wall_tiled_perfect.png"
-    
-    var angle = 0;
-    var image = new Sprite(WALL, false);
-    var pattern = new Sprite(CRATE, true);
+    var dirt = new Sprite("Resource/Tiles/dirt/floor_dirt01.png", true);
     
     setInterval(function(){
-        image.draw(10, 400);
-        image.draw(0, 0, 1280, 50);
-        pattern.drawPattern(0, 720 - 50, 1280, 50);
-    }, 1);
+        dirt.drawPattern(0, 720 - 50, 1280, 50);
+        
+    }, gameTime);
 };
