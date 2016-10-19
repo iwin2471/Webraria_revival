@@ -33,13 +33,15 @@ var Sprite = function(filename, is_pattern){
 var gameTimeScale = 1;
 var camScale = 2;
 
+var tilemap = [,];
+var row = 0;
+var col = 0;
+
 var tileMapSets = new Array();
 tileMapSets[0] = new Image();
 tileMapSets[0].src = "Resource/Tiles/dirt/floor_dirt01.png";
 tileMapSets[1] = new Image();
 tileMapSets[1].src = "Resource/Tiles/liquid/water opacity 90.png";
-tileMapSets[2] = new Image();
-tileMapSets[2].src = "Resource/Tiles/object/glass opacity 80.png";
 
 function Initialize(){
     context.beginPath();
@@ -49,6 +51,7 @@ function Initialize(){
     
     var dirt = new Sprite("Resource/Tiles/dirt/floor_dirt01.png", true);
     
+    //게임 리얼타임 시스템부분
     setInterval(function(){
         /*for(var i = 0; i < 1280; i += 8){
             for(var j = 0; j < 720; j += 8){
@@ -58,12 +61,24 @@ function Initialize(){
         }*/
     }, gameTimeScale);
     
+    //월드생성 및 타일맵 저장 부분, 변수 등 정리 필요
+    var cnt = 0;
+    var tilemapString = "";
     setInterval(function(){
-        for(var i = 0; i < 1280; i += 8){
-            for(var j = 0; j < 720; j += 8){
-                context.drawImage(tileMapSets[Math.floor(Math.random() * 3)], i, j);
-                //dirt.draw(i, j);
+        while(cnt == 0){
+            for(var i = 0; i < 1280; i += 8){
+                for(var j = 0; j < 720; j += 8){
+                    var random = Math.floor(Math.random() * 2);
+                    context.drawImage(tileMapSets[random], i, j);
+                    tilemap[row, col] = random;
+                    tilemapString += random.toString();
+                    col++;
+                }
+                row++;
+                col = 0;
             }
+            console.log(tilemapString);
+            cnt++;
         }
-    }, 2000);
+    }, 1);
 };
