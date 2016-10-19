@@ -30,8 +30,16 @@ var Sprite = function(filename, is_pattern){
 };
 
 //In-Game Settings
-var gameTime = 1;
+var gameTimeScale = 1;
 var camScale = 2;
+
+var tileMapSets = new Array();
+tileMapSets[0] = new Image();
+tileMapSets[0].src = "Resource/Tiles/dirt/floor_dirt01.png";
+tileMapSets[1] = new Image();
+tileMapSets[1].src = "Resource/Tiles/liquid/water opacity 90.png";
+tileMapSets[2] = new Image();
+tileMapSets[2].src = "Resource/Tiles/object/glass opacity 80.png";
 
 function Initialize(){
     context.beginPath();
@@ -42,7 +50,20 @@ function Initialize(){
     var dirt = new Sprite("Resource/Tiles/dirt/floor_dirt01.png", true);
     
     setInterval(function(){
-        dirt.drawPattern(0, 720 - 50, 1280, 50);
-        
-    }, gameTime);
+        /*for(var i = 0; i < 1280; i += 8){
+            for(var j = 0; j < 720; j += 8){
+                context.drawImage(tileMapSets[Math.floor(Math.random() * 3)], i, j);
+                //dirt.draw(i, j);
+            }
+        }*/
+    }, gameTimeScale);
+    
+    setInterval(function(){
+        for(var i = 0; i < 1280; i += 8){
+            for(var j = 0; j < 720; j += 8){
+                context.drawImage(tileMapSets[Math.floor(Math.random() * 3)], i, j);
+                //dirt.draw(i, j);
+            }
+        }
+    }, 2000);
 };
