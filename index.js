@@ -74,6 +74,7 @@ function Initialize(){
                     tilemapString += random.toString();
                     col++;
                 }
+                tilemapString += "\n";
                 row++;
                 col = 0;
             }
