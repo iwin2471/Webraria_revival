@@ -4,7 +4,6 @@ var context = canvas.getContext('2d');
 var Sprite = function(filename, is_pattern){
     this.image = null;
     this.pattern = null;
-    this.TO_RADIANS = Math.PI/180;
     
     if(filename != undefined && filename != "" && filename != null){
         this.image = new Image();
@@ -28,14 +27,6 @@ var Sprite = function(filename, is_pattern){
          context.fillStyle = this.pattern;
          context.fillRect(x, y, w, h);
     };
-    
-    this.rotate = function(x, y, angle){
-        context.save();
-        context.translate(x, y);
-        context.rotate(angle * this.TO_RADIANS);
-        context.drawImage(this.image, -(this.image.width/2), -(this.image.height /2));
-        context.restore();
-    };
 };
 
 function Initialize(){
@@ -48,13 +39,12 @@ function Initialize(){
     var CRATE = "http://gamedesign.wdfiles.com/local--files/spriteart:sprite-art-101-brick-wall-i/brick_wall_tiled_perfect.png"
     
     var angle = 0;
-    var image = new Sprite(WALL, false);  
+    var image = new Sprite(WALL, false);
     var pattern = new Sprite(CRATE, true);
     
     setInterval(function(){
         image.draw(10, 400);
         image.draw(0, 0, 1280, 50);
         pattern.drawPattern(0, 720 - 50, 1280, 50);
-        image.rotate(80, 400, angle += 4.0);
     }, 1);
 };
