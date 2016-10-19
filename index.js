@@ -8,19 +8,7 @@ var Sprite = function(filename, spritename){
 };
 
 setup = function(){
-    var image01 = new Sprite("http://www.w3schools.com/css/trolltunga.jpg", "First Image");
-    
-    context.drawImage(image01.image, 0, 0);
-    
-    context.beginPath();
-    context.rect(50, 50, 50, 50);
-    context.fillStyle = "black";
-    context.fill();
-    
-    context.beginPath();
-    context.rect(100, 100, 50, 50);
-    context.fillStyle = "red";
-    context.fill();
-    
+    var image01 = new Sprite("Resource/KakaoTalk_Photo_2016-10-18-22-34-04.png", "First Image");
     console.log(image01.name + " Loaded");
+    context.drawImage(image01.image, 50, 50);
 };
