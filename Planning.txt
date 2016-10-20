@@ -1,0 +1,11 @@
+[,]
+
+dirt
+fracture
+ice
+liquid
+mineral
+object
+sand
+ore
+wood
