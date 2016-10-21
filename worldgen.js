@@ -2,7 +2,7 @@ var Context = new HTML("mainCanvas");
 var cnt = 0;
 
 
-
+//알고리즘 손봐야함 필수
 function drawWorld(){
     var tileMapString = "";
     var perc = 11;
