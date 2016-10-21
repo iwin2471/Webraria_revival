@@ -12,15 +12,14 @@ var tileSet;
     terrainTileSet[0, 3].src = "Resource/Tiles/dirt/floor_dirt04.png";
 
 //Water Images
-    terrainTileSet[1, 0] = new Image();
-    terrainTileSet[1, 0].src = "Resource/Tiles/liquid/water opacity 90.png";
-    terrainTileSet[1, 1] = new Image();
-    terrainTileSet[1, 1].src = "Resource/Tiles/liquid/water opacity 95.png";
-    terrainTileSet[1, 2] = new Image();
-    terrainTileSet[1, 2].src = "Resource/Tiles/liquid/water surface opacity 90.png";
-    terrainTileSet[1, 3] = new Image();
-    terrainTileSet[1, 3].src = "Resource/Tiles/liquid/water surface opacity 95.png";
-
+    terrainTileSet[1, 4] = new Image();
+    terrainTileSet[1, 4].src = "Resource/Tiles/liquid/water opacity 90.png";
+    terrainTileSet[1, 5] = new Image();
+    terrainTileSet[1, 5].src = "Resource/Tiles/liquid/water opacity 95.png";
+    terrainTileSet[1, 6] = new Image();
+    terrainTileSet[1, 6].src = "Resource/Tiles/liquid/water surface opacity 90.png";
+    terrainTileSet[1, 7] = new Image();
+    terrainTileSet[1, 7].src = "Resource/Tiles/liquid/water surface opacity 95.png";
 
 var oreTileSet = [,];
 

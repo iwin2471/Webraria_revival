@@ -12,9 +12,9 @@ function drawWorld(){
                 for(var j = 0; j < Context.canvas.width; j+=8){
                     var terrainType = Math.floor(Math.random() * 2); //Dirt or Water
                     var terrainTypeNum = Math.floor(Math.random() * 4); //Layer Number
-                    tileMapString += terrainType.toString();
+                    tileMapString += terrainType.toString() + "(" + terrainTypeNum + ") ";
                     
-                    Context.context.drawImage(tileSet[0][terrainType, terrainTypeNum], j, i);
+                    Context.context.drawImage(tileSet[0][terrainType, terrainTypeNum + (terrainType * 4)], j, i);
             }
             tileMapString += "\n";
         }
