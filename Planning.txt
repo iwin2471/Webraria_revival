@@ -1,5 +1,5 @@
-[,]
-
+Layers
+---------
 dirt
 fracture
 ice
@@ -9,3 +9,10 @@ object
 sand
 ore
 wood
+
+
+Scripts
+---------
+Tilemap
+Objects
+World
