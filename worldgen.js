@@ -16,9 +16,9 @@ function drawWorld(){
                 
                 if(Math.ceil(Math.random() * 10) > perc){
                     if(Math.floor(Math.random() * 2) == 0){
-                        height -= Math.ceil(Math.random() * 20);
+                        height -= Math.ceil(Math.random() * 14);
                     } else {
-                        height += Math.ceil(Math.random() * 20);
+                        height += Math.ceil(Math.random() * 14);
                     }
                 } else {
                     height = Math.floor(Math.random() * Context.canvas.height);
