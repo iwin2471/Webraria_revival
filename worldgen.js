@@ -21,7 +21,8 @@ function drawWorld(){
                     
                     if(j > height){
                         if(firstCnt == 0){
-                            Context.context.drawImage(tileSet[0][0, 1], i, j);
+                            var randomTop = Math.floor(Math.random() * 3);
+                            Context.context.drawImage(tileSet[0][0, randomTop], i, j);
                             console.log("First Added");
                         } else {
                             Context.context.drawImage(tileSet[0][0, 3], i, j);
