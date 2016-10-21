@@ -9,7 +9,9 @@ function drawWorld(){
     var height;
     
     setInterval(function(){
-        while(cnt==0){
+        //while(cnt==0){
+            Context.context.clearRect(0, 0, Context.canvas.width * 5, Context.canvas.height);
+            height = Context.canvas.height/2;
             for(var i = 0; i < Context.canvas.width * 5; i+=8){
                 
                 var heightCnt = 0;
@@ -57,6 +59,6 @@ function drawWorld(){
         console.log("World Loading Complete");
         //console.log(tileMapString);
         cnt++;
-        }
-    }, 1);
+        //}
+    }, 10);
 }
