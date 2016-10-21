@@ -10,7 +10,7 @@ function drawWorld(){
     
     setInterval(function(){
         while(cnt==0){
-            for(var i = 0; i < Context.canvas.width; i+=8){
+            for(var i = 0; i < Context.canvas.width * 5; i+=8){
                 
                 var heightCnt = 0;
                 
