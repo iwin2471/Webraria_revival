@@ -5,6 +5,9 @@ var cnt = 0;
 //동굴 및 바다 강, 돌과 오어
 //저장하는거
 
+var lastLayer = [];
+var layerCnt = 0;
+
 function drawWorld(){
     var tileMapString = "";
     var perc = 0.1;
@@ -37,6 +40,9 @@ function drawWorld(){
                         height -= 500;
                     }
                 }
+                
+                lastLayer[layerCnt] = height;
+                layerCnt++;
                 
                 firstCnt = 0;
                 
