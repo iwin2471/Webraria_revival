@@ -16,3 +16,8 @@ Scripts
 Tilemap
 Objects
 World
+
+                    //var terrainType = Math.floor(Math.random() * 2); //Dirt or Water
+                    //var terrainTypeNum = Math.floor(Math.random() * 4); //Layer Number
+                    //tileMapString += terrainType.toString() + "(" + terrainTypeNum + ") ";
+                    //Context.context.drawImage(tileSet[0][terrainType, terrainTypeNum + (terrainType * 4)], j, i);

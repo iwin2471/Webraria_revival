@@ -1,6 +1,4 @@
 var terrainTileSet = [,];
-var tileSet;
-
 //Dirt Images
     terrainTileSet[0, 0] = new Image();
     terrainTileSet[0, 0].src = "Resource/Tiles/dirt/floor_dirt01.png";
@@ -24,4 +22,4 @@ var tileSet;
 var oreTileSet = [,];
 
 
-tileSet = [terrainTileSet, oreTileSet];
+var tileSet = [terrainTileSet, oreTileSet];
