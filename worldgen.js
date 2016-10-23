@@ -3,6 +3,7 @@ var cnt = 0;
 
 //Polish 하기
 //동굴 및 바다 강, 돌과 오어
+//저장하는거
 
 function drawWorld(){
     var tileMapString = "";
@@ -24,9 +25,9 @@ function drawWorld(){
                 
                 if(Math.ceil(Math.random() * 10) > perc){
                     if(Math.floor(Math.random() * 2) == 0){
-                        height -= Math.ceil(Math.random() * 14);
+                        height -= Math.ceil(Math.random() * 16);
                     } else {
-                        height += Math.ceil(Math.random() * 14);
+                        height += Math.ceil(Math.random() * 16);
                     }
                 } else {
                     height = Math.floor(Math.random() * mapHeight);
@@ -46,12 +47,10 @@ function drawWorld(){
                             Context.context.drawImage(tileSet[0][0, randomTop], i, j);
                         } else {
                             Context.context.drawImage(tileSet[0][0, 3], i, j);
-                            tileMapString += "s";
                         }
                         firstCnt++;
                     }
             }
-            tileMapString += "\n";
         }
         console.log("World Loading Complete");
         console.log(tileMapString);
