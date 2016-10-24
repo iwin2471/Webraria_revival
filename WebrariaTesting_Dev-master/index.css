@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+canvas{
+    border: 3px solid white;
+    background-color: skyblue;
+    display: inline;
+}
+h1{
+    color: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-style: thin;
+    font-size: 60px;
+}
+#canvas-container{
+    width: 100%;
+    text-align:center;
+}
