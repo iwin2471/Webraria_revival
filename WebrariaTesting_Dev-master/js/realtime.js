@@ -5,6 +5,7 @@ window.addEventListener('keyup',onKeyUp);
     var playery;
     var player = new Player("JohnSoo", "Resource/Character/3.png");
     
+    var framesPerSecond = 30;
     
     function startGame(){
         player.xPos = 0;
@@ -26,7 +27,7 @@ window.addEventListener('keyup',onKeyUp);
             Context.context.drawImage(player.sprite, player.xPos, player.yPos, 8, 16);
             
             console.log("Player Drawn Loc X : " + player.xPos + " Loc Y : " + player.yPos);
-        }, 10);
+        }, 1000 * 1/framesPerSecond);
     }
 
 function onKeyDown(e){
