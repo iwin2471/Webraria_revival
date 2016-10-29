@@ -1,0 +1,113 @@
+html,body{
+    width:100%;
+    height:100%;
+    
+    margin:0px;
+
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+h1{
+    margin:0px;
+}
+
+.section{
+    width:100%;
+    height:100%;
+}
+
+#section1{
+    background-image:url(../img/intro1.jpg);
+    background-size:100%;
+}
+
+#section2{
+    background-image:url(../img/intro2.jpg);
+    background-size:100%;
+}
+
+#section3{
+    background-image:url(../img/intro1.jpg);
+    background-size:100%;
+}
+
+#section4{
+    background-image:url(../img/intro2.jpg);
+    background-size:100%;
+}
+
+.cover{
+    width:100%;
+    height:100%;
+    
+    background-color:rgba(255,255,255,0.3);
+}
+
+#mainContent{
+    width:100%;
+    height:100%;
+    
+    padding-top:22%;
+}
+
+#content{
+    width:100%;
+    height:20%;
+    
+    text-align:center;
+}
+
+h1{
+    display:inline;
+}
+
+.t1{
+    
+    font-size:100px;
+    
+    color:black;
+    font-weight:900;   
+}
+
+.t2{
+    font-size:100px;
+    
+    color:white;
+    font-weight:900; 
+}
+
+#join{
+
+    margin:auto;
+    margin-top:1%;
+    
+    width:25%;
+    height:30%;
+
+    font-size:40px;
+    
+    font-weight:900;
+    
+    color:black;
+    
+    background-color:white;
+    
+    border:5px solid black;
+    
+    border-radius:20px;
+}
+
+#join:hover{
+    
+    color:white;
+    
+    border:5px solid white;
+    
+    background-color:black;
+    
+    cursor:pointer;
+}
