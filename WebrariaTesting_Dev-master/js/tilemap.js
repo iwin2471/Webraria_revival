@@ -18,7 +18,9 @@ var terrainTileSet = [,];
     terrainTileSet[1, 6].src = "Resource/Tiles/liquid/water surface opacity 90.png";
     terrainTileSet[1, 7] = new Image();
     terrainTileSet[1, 7].src = "Resource/Tiles/liquid/water surface opacity 95.png";
+    
 
+    
 var oreTileSet = [,];
 
 
