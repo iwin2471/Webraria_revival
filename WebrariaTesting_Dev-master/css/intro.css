@@ -9,6 +9,8 @@ html,body{
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+    
+    
 }
 
 h1{
@@ -150,18 +152,22 @@ input{
     display:block;
 
     width:15vw;
-    height:3vh;
+    height:4vh;
     
     border:3px solid #434343;
     
     font-size:20px;
-    padding-left;3px;
+    padding-left;4px;
 
     border-radius:5px;
     
     background-color:rgba(0,0,0,0.6);
     
-    color:black;
+    color:white;
+    
+    -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -171,5 +177,17 @@ input{
 }
 
 #signup{
+    margin-top:1%;
+    height:4vh;
+    border:none;
+    outline:none;
     
+    font-size:25px;
+    font-weight:900;
+    
+    background-color:#31B7F0;
+    
+    color:white;
+    
+    cursor:pointer;
 }
