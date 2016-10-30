@@ -1,4 +1,5 @@
 var terrainTileSet = [,];
+var terrainJohnSooSet = [,];
 //Dirt Images
     terrainTileSet[0, 0] = new Image();
     terrainTileSet[0, 0].src = "Resource/Tiles/dirt/floor_dirt01.png";
@@ -19,8 +20,24 @@ var terrainTileSet = [,];
     terrainTileSet[1, 7] = new Image();
     terrainTileSet[1, 7].src = "Resource/Tiles/liquid/water surface opacity 95.png";
     
-
+//Object Images
+    terrainJohnSooSet[0] = new Image();
+    terrainJohnSooSet[0].src = "Resource/Tiles/Mineral/copperS.png";
     
+    terrainJohnSooSet[1] = new Image();
+    terrainJohnSooSet[1].src = "Resource/Tiles/Mineral/iro.png";
+    
+    terrainJohnSooSet[2] = new Image();
+    terrainJohnSooSet[2].src = "Resource/Tiles/Mineral/dia2.png";
+
+    terrainJohnSooSet[3] = new Image();
+    terrainJohnSooSet[3].src = "Resource/Tiles/object/stone.png";
+
+    terrainJohnSooSet[4] = new Image();
+    terrainJohnSooSet[4].src = "Resource/Tiles/dirt/floor_dirt04.png";
+    
+
+
 var oreTileSet = [,];
 
 

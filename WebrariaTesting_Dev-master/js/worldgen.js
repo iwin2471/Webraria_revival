@@ -17,6 +17,8 @@ function drawWorld(){
     var mapHeight = Context.canvas.height * 5;
     var mapWidth = Context.canvas.width * 5;
     
+    var KingGodJohnSoo;
+    
     setInterval(function(){
         while(cnt==0){
             
@@ -56,6 +58,27 @@ function drawWorld(){
                         }
                         firstCnt++;
                     }
+            }
+                
+            for(var k = 2784; k< mapHeight; k+=8){
+                KingGodJohnSoo = Math.floor(Math.random() * 100 + 1)
+                
+                if(KingGodJohnSoo < 10){
+                    Context.context.drawImage(terrainJohnSooSet[0],i,k);
+                }
+                else if(KingGodJohnSoo < 16 && KingGodJohnSoo > 12){
+                    Context.context.drawImage(terrainJohnSooSet[1],i,k);
+                }
+                else if(KingGodJohnSoo <42 && KingGodJohnSoo > 40){
+                    Context.context.drawImage(terrainJohnSooSet[2],i,k);
+                }
+                else if(KingGodJohnSoo <57 && KingGodJohnSoo > 50){
+                    Context.context.drawImage(terrainJohnSooSet[4],i,k); 
+                }
+                else{
+                    Context.context.drawImage(terrainJohnSooSet[3],i,k); 
+                }
+                
             }
         }
         console.log("World Loading Complete");
