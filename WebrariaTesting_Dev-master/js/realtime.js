@@ -20,7 +20,7 @@ window.addEventListener('keyup',onKeyUp);
             if(player.yPos <= lastLayer[Math.floor(player.xPos / 8)] - 10)
                 player.yPos+=1;
             
-            Context.context.rect(player.xPos,player.yPos,10,16);
+            Context.context.rect(player.xPos,player.yPos,8,16);
             Context.context.fillStyle = "skyblue";
             Context.context.fill();
             
@@ -36,19 +36,19 @@ function onKeyDown(e){
     
    if(e.keyCode == 37){
      playerx = player.xPos;
-     player.xPos -= 9;
+     player.xPos -= 8;
    }
    else if(e.keyCode == 38){
      playery = player.yPos;
-     player.yPos -= 20;
+     player.yPos -= 16;
    }
    else if(e.keyCode == 39){
      playerx = player.xPos;
-     player.xPos += 9;
+     player.xPos += 8;
    }
    else if(e.keyCode == 40){
      playerx = player.yPos;
-     player.yPos += 10;
+     player.yPos += 8;
    }
  }
  
