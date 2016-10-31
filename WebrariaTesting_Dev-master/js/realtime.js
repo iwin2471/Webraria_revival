@@ -17,7 +17,7 @@ window.addEventListener('keyup',onKeyUp);
 
             console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
 
-            if(player.yPos < lastLayer[Math.floor(player.xPos / 8)] - 8)
+            if(player.yPos < lastLayer[Math.floor(player.xPos / 8)] - 16)
                 player.yPos+=1;
             
             Context.context.rect(player.xPos,player.yPos,8,16);
@@ -26,7 +26,7 @@ window.addEventListener('keyup',onKeyUp);
             
             Context.context.drawImage(player.sprite, player.xPos, player.yPos, 8, 16);
             
-            console.log("Player Drawn Loc X : " + player.xPos + " Loc Y : " + player.yPos);
+            //console.log("Player Drawn Loc X : " + player.xPos + " Loc Y : " + player.yPos);
         }, 1000 * 1/framesPerSecond);
     }
 

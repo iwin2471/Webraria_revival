@@ -26,7 +26,6 @@ function drawWorld(){
             height = mapHeight / 2;
         
             for(var i = 0; i < mapWidth; i+=8){
-                
 //                if(Math.ceil(Math.random() * 10) > perc){
                     if(Math.floor(Math.random() * 2) == 0){
                         height -= Math.ceil(Math.random() * 8);
@@ -42,9 +41,6 @@ function drawWorld(){
 //                    }
 //                }
                 
-                lastLayer[layerCnt] = height;
-                layerCnt++;
-                
                 firstCnt = 0;
                 
                 for(var j = 0; j < mapHeight; j+=8){
@@ -52,6 +48,8 @@ function drawWorld(){
                         if(firstCnt == 0){
                             var randomTop = Math.floor(Math.random() * 3);
                             Context.context.drawImage(tileSet[0][0, randomTop], i, j);
+                            lastLayer[layerCnt] = j;
+                            layerCnt++;
                         } else {
                             Context.context.drawImage(tileSet[0][0, 3], i, j);
                         }
