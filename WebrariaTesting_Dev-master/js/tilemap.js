@@ -1,5 +1,5 @@
 var terrainTileSet = [,];
-var terrainJohnSooSet = [,];
+var terrainOreSet = [,];
 //Dirt Images
     terrainTileSet[0, 0] = new Image();
     terrainTileSet[0, 0].src = "Resource/Tiles/dirt/floor_dirt01.png";
@@ -21,20 +21,20 @@ var terrainJohnSooSet = [,];
     terrainTileSet[1, 7].src = "Resource/Tiles/liquid/water surface opacity 95.png";
     
 //Object Images
-    terrainJohnSooSet[0] = new Image();
-    terrainJohnSooSet[0].src = "Resource/Tiles/Mineral/copperS.png";
+    terrainOreSet[0] = new Image();
+    terrainOreSet[0].src = "Resource/Tiles/Mineral/copperS.png";
     
-    terrainJohnSooSet[1] = new Image();
-    terrainJohnSooSet[1].src = "Resource/Tiles/Mineral/iro.png";
+    terrainOreSet[1] = new Image();
+    terrainOreSet[1].src = "Resource/Tiles/Mineral/iro.png";
     
-    terrainJohnSooSet[2] = new Image();
-    terrainJohnSooSet[2].src = "Resource/Tiles/Mineral/dia2.png";
+    terrainOreSet[2] = new Image();
+    terrainOreSet[2].src = "Resource/Tiles/Mineral/dia2.png";
 
-    terrainJohnSooSet[3] = new Image();
-    terrainJohnSooSet[3].src = "Resource/Tiles/object/stone.png";
+    terrainOreSet[3] = new Image();
+    terrainOreSet[3].src = "Resource/Tiles/object/stone.png";
 
-    terrainJohnSooSet[4] = new Image();
-    terrainJohnSooSet[4].src = "Resource/Tiles/dirt/floor_dirt04.png";
+    terrainOreSet[4] = new Image();
+    terrainOreSet[4].src = "Resource/Tiles/dirt/floor_dirt04.png";
     
 
 

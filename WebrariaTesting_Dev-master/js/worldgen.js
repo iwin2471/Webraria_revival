@@ -17,7 +17,7 @@ function drawWorld(){
     var mapHeight = Context.canvas.height * 5;
     var mapWidth = Context.canvas.width * 5;
     
-    var KingGodJohnSoo;
+    var orePercentage;
     
     setInterval(function(){
         while(cnt==0){
@@ -61,22 +61,22 @@ function drawWorld(){
             }
                 
             for(var k = 2784; k< mapHeight; k+=8){
-                KingGodJohnSoo = Math.floor(Math.random() * 100 + 1)
+                orePercentage = Math.floor(Math.random() * 100 + 1)
                 
-                if(KingGodJohnSoo < 10){
-                    Context.context.drawImage(terrainJohnSooSet[0],i,k);
+                if(orePercentage < 10){
+                    Context.context.drawImage(terrainOreSet[0],i,k);
                 }
-                else if(KingGodJohnSoo < 16 && KingGodJohnSoo > 12){
-                    Context.context.drawImage(terrainJohnSooSet[1],i,k);
+                else if(orePercentage < 16 && orePercentage > 12){
+                    Context.context.drawImage(terrainOreSet[1],i,k);
                 }
-                else if(KingGodJohnSoo <42 && KingGodJohnSoo > 40){
-                    Context.context.drawImage(terrainJohnSooSet[2],i,k);
+                else if(orePercentage <42 && orePercentage > 40){
+                    Context.context.drawImage(terrainOreSet[2],i,k);
                 }
-                else if(KingGodJohnSoo <57 && KingGodJohnSoo > 50){
-                    Context.context.drawImage(terrainJohnSooSet[4],i,k); 
+                else if(orePercentage <57 && orePercentage > 50){
+                    Context.context.drawImage(terrainOreSet[4],i,k); 
                 }
                 else{
-                    Context.context.drawImage(terrainJohnSooSet[3],i,k); 
+                    Context.context.drawImage(terrainOreSet[3],i,k); 
                 }
                 
             }
