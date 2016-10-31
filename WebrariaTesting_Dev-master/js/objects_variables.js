@@ -12,6 +12,8 @@ var Player = function(playerName, spriteSrc){
     
     this.xPos = 0;
     this.yPos = 0;
+    
+    this.canJump = false;
 };
 
 //In-Game Settings - 아래에서 어느정도 작성한 뒤 변수 정리
