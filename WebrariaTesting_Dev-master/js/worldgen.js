@@ -21,27 +21,26 @@ function drawWorld(){
     
     setInterval(function(){
         while(cnt==0){
-            
             Context.context.clearRect(0, 0, mapWidth, mapHeight);
             
             height = mapHeight / 2;
         
             for(var i = 0; i < mapWidth; i+=8){
                 
-                if(Math.ceil(Math.random() * 10) > perc){
+//                if(Math.ceil(Math.random() * 10) > perc){
                     if(Math.floor(Math.random() * 2) == 0){
-                        height -= Math.ceil(Math.random() * 16);
+                        height -= Math.ceil(Math.random() * 8);
                     } else {
-                        height += Math.ceil(Math.random() * 16);
+                        height += Math.ceil(Math.random() * 8);
                     }
-                } else {
-                    height = Math.floor(Math.random() * mapHeight);
-                    if(height > mapHeight / 2){
-                        height += 500;
-                    } else {
-                        height -= 500;
-                    }
-                }
+//                } else {
+//                    height = Math.floor(Math.random() * mapHeight);
+//                    if(height > mapHeight / 2){
+//                        height += 500;
+//                    } else {
+//                        height -= 500;
+//                    }
+//                }
                 
                 lastLayer[layerCnt] = height;
                 layerCnt++;
@@ -59,30 +58,30 @@ function drawWorld(){
                         firstCnt++;
                     }
             }
-                
-            for(var k = 2784; k< mapHeight; k+=8){
-                orePercentage = Math.floor(Math.random() * 100 + 1)
-                
-                if(orePercentage < 10){
-                    Context.context.drawImage(terrainOreSet[0],i,k);
-                }
-                else if(orePercentage < 16 && orePercentage > 12){
-                    Context.context.drawImage(terrainOreSet[1],i,k);
-                }
-                else if(orePercentage <42 && orePercentage > 40){
-                    Context.context.drawImage(terrainOreSet[2],i,k);
-                }
-                else if(orePercentage <57 && orePercentage > 50){
-                    Context.context.drawImage(terrainOreSet[4],i,k); 
-                }
-                else{
-                    Context.context.drawImage(terrainOreSet[3],i,k); 
-                }
-                
-            }
+//                
+//            for(var k = 2784; k< mapHeight; k+=8){
+//                orePercentage = Math.floor(Math.random() * 100 + 1)
+//                
+//                if(orePercentage < 10){
+//                    Context.context.drawImage(terrainOreSet[0],i,k);
+//                }
+//                else if(orePercentage < 16 && orePercentage > 12){
+//                    Context.context.drawImage(terrainOreSet[1],i,k);
+//                }
+//                else if(orePercentage <42 && orePercentage > 40){
+//                    Context.context.drawImage(terrainOreSet[2],i,k);
+//                }
+//                else if(orePercentage <57 && orePercentage > 50){
+//                    Context.context.drawImage(terrainOreSet[4],i,k); 
+//                }
+//                else{
+//                    Context.context.drawImage(terrainOreSet[3],i,k); 
+//                }
+//                
+//            }
         }
         console.log("World Loading Complete");
-        console.log(tileMapString);
+        //console.log(tileMapString);
         cnt++;
         }
     }, 500);

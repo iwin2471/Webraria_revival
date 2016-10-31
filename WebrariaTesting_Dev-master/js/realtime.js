@@ -17,7 +17,7 @@ window.addEventListener('keyup',onKeyUp);
 
             console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
 
-            if(player.yPos < lastLayer[Math.floor(player.xPos / 8)] - 16)
+            if(player.yPos < lastLayer[Math.floor(player.xPos / 8)] - 8)
                 player.yPos+=1;
             
             Context.context.rect(player.xPos,player.yPos,8,16);
