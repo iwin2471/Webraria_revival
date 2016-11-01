@@ -12,6 +12,8 @@ var Player = function(playerName, spriteSrc){
     
     this.xPos = 0;
     this.yPos = 0;
+    this.sideMovementSpeed = 8;
+    this.jumpForce = 24;
     
     this.canJump = false;
 };
