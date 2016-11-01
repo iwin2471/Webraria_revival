@@ -1,5 +1,11 @@
 var terrainTileSet = [,];
 var terrainOreSet = [,];
+
+var worldTerrainSave = new Array();
+for(var i = 0; i < 1920 * 5; i++){
+    worldTerrainSave[i] = new Array();
+}
+
 //Dirt Images
     terrainTileSet[0, 0] = new Image();
     terrainTileSet[0, 0].src = "Resource/Tiles/dirt/floor_dirt01.png";
