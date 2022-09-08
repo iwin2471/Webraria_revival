@@ -5,10 +5,14 @@ var HTML = function(canvasId){
     this.context.imageSmoothingEnabled = false;
 };
 
-var Player = function(playerName, spriteSrc){
+const Player = function(playerName, spriteSrc){
     this.name = playerName;
     this.sprite = new Image();
     this.sprite.src = spriteSrc;
+    this.loaded = false;
+    this.sprite.onload = () => {
+        this.loaded = ture;
+    }
     
     this.xPos = 0;
     this.yPos = 0;
