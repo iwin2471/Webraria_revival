@@ -3,8 +3,6 @@ window.addEventListener("keyup", onKeyUp);
 
 var player = new Player("JohnSoo", "Resource/Character/3.png");
 
-var framesPerSecond = 60;
-
 function startGame() {
   player.xPos = 0;
   player.yPos = 2400;
@@ -32,28 +30,35 @@ function startGame() {
   }, (1000 * 1) / framesPerSecond);
 }
 
-function onKeyDown({ keyCode, type }) {
-  if (keyCode == 37) {
-    if (
-      worldTerrainSave[player.xPos - player.sideMovementSpeed][
-        player.yPos + 15
-      ] == false
-    ) {
-      player.xPos -= player.sideMovementSpeed;
-    }
-  } else if (keyCode == 38 || keyCode == 32) {
-    if (player.canJump) {
+function onKeyDown({ keyCode }) {
+  switch (keyCode) {
+    case 37:
+      if (
+        !worldTerrainSave[player.xPos - player.sideMovementSpeed][
+          player.yPos + 15
+        ]
+      ) {
+        player.xPos -= player.sideMovementSpeed;
+      }
+      break;
+    case 32:
+    case 38:
+      if (!player.canJump) break;
       player.yPos -= player.jumpForce;
       player.canJump = false;
-    }
-  } else if (keyCode == 39) {
-    if (
-      worldTerrainSave[player.xPos + player.sideMovementSpeed][
-        player.yPos + 15
-      ] == false
-    ) {
-      player.xPos += player.sideMovementSpeed;
-    }
+      break;
+    case 39:
+      if (
+        worldTerrainSave[player.xPos + player.sideMovementSpeed][
+          player.yPos + 15
+        ] == false
+      ) {
+        player.xPos += player.sideMovementSpeed;
+      }
+      break;
+    case 40:
+      player.yPos += 10;
+      break;
   }
 }
 

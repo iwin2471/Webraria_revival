@@ -5,21 +5,29 @@ var player = new Player(
 
 function startGame() {
   player.position.setX(0);
-  player.position.setY(2400)
+  player.position.setY(2400);
 
   //몇가지 오류수정
   setInterval(function () {
     Context.context.clearRect(player.xPos, player.yPos, 8, 16);
 
-    console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
-
     if (player.position.y <= lastLayer[Math.floor(player.xPos / 8)] - 10)
       player.position.y += 1;
+
     if (player.loaded)
-      Context.context.drawImage(player.sprite, player.position.x, player.position.y, 8, 16);
+      Context.context.drawImage(
+        player.sprite,
+        player.position.x,
+        player.position.y,
+        8,
+        16
+      );
 
     console.log(
-      "Player Drawn Loc X : " + player.position.x + " Loc Y : " + player.position.y
+      "Player Drawn Loc X : " +
+        player.position.x +
+        " Loc Y : " +
+        player.position.y
     );
   }, 1000);
 }

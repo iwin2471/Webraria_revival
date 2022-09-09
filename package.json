@@ -1,0 +1,24 @@
+{
+  "name": "webraria_revival",
+   "type": "module",
+  "version": "1.0.0",
+  "description": "Web Game using HTML5 Canvas revival project @igg002 thank you",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/esbuild --bundle --outfile=out.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iwin2471/Webraria_revival.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iwin2471/Webraria_revival/issues"
+  },
+  "homepage": "https://github.com/iwin2471/Webraria_revival#readme",
+  "dependencies": {
+    "esbuild": "^0.15.7"
+  }
+}
