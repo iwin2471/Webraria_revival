@@ -1,0 +1,193 @@
+html,body{
+    width:100%;
+    height:100%;
+    
+    margin:0px;
+
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+    
+    
+}
+
+h1{
+    margin:0px;
+}
+
+.section{
+    width:100%;
+    height:100%;
+}
+
+#section1{
+    background-image:url(../img/intro1.jpg);
+    background-size:100%;
+}
+
+#section2{
+    background-image:url(../img/intro2.jpg);
+    background-size:100%;
+}
+
+#section3{
+    background-image:url(../img/intro1.jpg);
+    background-size:100%;
+}
+
+#section4{
+    background-image:url(../img/intro2.jpg);
+    background-size:100%;
+}
+
+.cover{
+    width:100%;
+    height:100%;
+    
+    background-color:rgba(255,255,255,0.3);
+}
+
+#mainContent{
+    width:100%;
+    height:100%;
+    
+    padding-top:22%;
+}
+
+#content{
+    width:100%;
+    height:20%;
+    
+    text-align:center;
+}
+
+h1{
+    display:inline;
+}
+
+.t1{
+    
+    font-size:100px;
+    
+    color:black;
+    font-weight:900;   
+}
+
+.t2{
+    font-size:100px;
+    
+    color:white;
+    font-weight:900; 
+}
+
+#join{
+
+    margin:auto;
+    margin-top:1%;
+    
+    width:25%;
+    height:30%;
+
+    font-size:40px;
+    
+    font-weight:900;
+    
+    color:black;
+    
+    background-color:white;
+    
+    border:5px solid black;
+    
+    border-radius:20px;
+}
+
+#join:hover{
+    
+    color:white;
+    
+    border:5px solid white;
+    
+    background-color:black;
+    
+    cursor:pointer;
+}
+
+#sign{
+    font-size:70px;
+    color:#fff;
+    
+    font-weight:900;
+}
+
+
+#up{
+    font-size:70px;
+    color:black;
+    
+    font-weight:900;
+}
+
+#signUpText{
+    width:100%;
+    height:20%;
+    
+    text-align:center;
+    
+    padding-top:10%;    
+}
+
+#signUpBox{
+    
+    width:100%;
+    height:80%;
+    
+}
+
+input{
+    margin-bottom:1%;
+    
+    margin-left:42vw;
+    display:block;
+
+    width:15vw;
+    height:4vh;
+    
+    border:3px solid #434343;
+    
+    font-size:20px;
+    padding-left;4px;
+
+    border-radius:5px;
+    
+    background-color:rgba(0,0,0,0.6);
+    
+    color:white;
+    
+    -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+#username{
+    margin-top:2%;
+}
+
+#signup{
+    margin-top:1%;
+    height:4vh;
+    border:none;
+    outline:none;
+    
+    font-size:25px;
+    font-weight:900;
+    
+    background-color:#31B7F0;
+    
+    color:white;
+    
+    cursor:pointer;
+}

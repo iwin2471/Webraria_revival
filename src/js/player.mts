@@ -1,3 +1,4 @@
+import Position from "./Position.mts";
 export default class Player {
     name: string;
     sprite: HTMLImageElement = new Image();

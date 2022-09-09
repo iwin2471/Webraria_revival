@@ -1,6 +1,6 @@
 {
   "name": "webraria_revival",
-   "type": "module",
+  "type": "module",
   "version": "1.0.0",
   "description": "Web Game using HTML5 Canvas revival project @igg002 thank you",
   "main": "index.js",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/iwin2471/Webraria_revival#readme",
   "dependencies": {
     "esbuild": "^0.15.7"
+  },
+  "devDependencies": {
+    "esbuild-serve": "^1.0.1"
   }
 }

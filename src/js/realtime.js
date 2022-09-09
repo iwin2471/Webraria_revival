@@ -1,17 +1,23 @@
-window.addEventListener("keydown", onKeyDown);
-window.addEventListener("keyup", onKeyUp);
+import Player from "./player.mts";
+import Canvas from "./canvas";
+import { worldTerrainSave } from "./tilemap";
 
-var player = new Player("JohnSoo", "Resource/Character/3.png");
+const player = new Player("JohnSoo", "Resource/Character/3.png");
+const framesPerSecond = 60;
 
 function startGame() {
+  window.addEventListener("keydown", onKeyDown);
+  window.addEventListener("keyup", onKeyUp);
+  const context = Canvas.getInstance().getContext();
+
   player.xPos = 0;
   player.yPos = 2400;
 
   //몇가지 오류수정
   setInterval(function () {
-    Context.context.clearRect(player.xPos, player.yPos, 8, 16);
+    context.clearRect(player.xPos, player.yPos, 8, 16);
 
-    //console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
+    // console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
 
     if (worldTerrainSave[player.xPos][player.yPos + 16] == false) {
       player.yPos += 2;
@@ -19,11 +25,11 @@ function startGame() {
       player.canJump = true;
     }
 
-    Context.context.rect(player.xPos, player.yPos, 8, 15);
-    Context.context.fillStyle = "skyblue";
-    Context.context.fill();
+    context.rect(player.xPos, player.yPos, 8, 15);
+    context.fillStyle = "skyblue";
+    context.fill();
 
-    Context.context.drawImage(player.sprite, player.xPos, player.yPos, 8, 16);
+    context.drawImage(player.sprite, player.xPos, player.yPos, 8, 16);
     //console.log("Player Drawn Loc X : " + player.xPos + " Loc Y : " + player.yPos + " CanJump : " + player.canJump);
     //            console.log("Left : " + worldTerrainSave[player.xPos - 8][player.yPos + 15]);
     //            console.log("Right : " + worldTerrainSave[player.xPos + 8][player.yPos + 15]);
@@ -62,7 +68,6 @@ function onKeyDown({ keyCode }) {
   }
 }
 
-function onKeyUp(e) {
-  keyCode = e.keyCode;
-  eventType = e.type;
-}
+function onKeyUp({ keyCode, type }) {}
+
+export { startGame, onKeyDown, onKeyUp, player };
