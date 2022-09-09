@@ -32,11 +32,8 @@ function startGame() {
   }, (1000 * 1) / framesPerSecond);
 }
 
-function onKeyDown(e) {
-  keyCode = e.keyCode;
-  eventType = e.type;
-
-  if (e.keyCode == 37) {
+function onKeyDown({ keyCode, type }) {
+  if (keyCode == 37) {
     if (
       worldTerrainSave[player.xPos - player.sideMovementSpeed][
         player.yPos + 15
@@ -44,12 +41,12 @@ function onKeyDown(e) {
     ) {
       player.xPos -= player.sideMovementSpeed;
     }
-  } else if (e.keyCode == 38) {
+  } else if (keyCode == 38 || keyCode == 32) {
     if (player.canJump) {
       player.yPos -= player.jumpForce;
       player.canJump = false;
     }
-  } else if (e.keyCode == 39) {
+  } else if (keyCode == 39) {
     if (
       worldTerrainSave[player.xPos + player.sideMovementSpeed][
         player.yPos + 15
