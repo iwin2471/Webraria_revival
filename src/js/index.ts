@@ -1,11 +1,12 @@
 import Player from "./player.mts";
 import Canvas from "./canvas";
-import { drawWorld } from "./worldgen";
-import { startGame } from "./realtime";
+import WorldGen from "./engine/worldgen";
+import { startGame } from "./engine/realtime";
 
 function init() {
+  const world = new WorldGen();
   Canvas.getInstance().initElement("mainCanvas");
-  drawWorld();
+  world.drawWorld();
   startGame();
 }
 

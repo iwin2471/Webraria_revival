@@ -1,18 +1,15 @@
 export default class Position {
-  public x: number;
-  public y: number;
+  x: number;
+  y: number;
 
   constructor();
   constructor(x?: number, y?: number) {
     this.x = x;
     this.y = y;
-  };
-
-  setX(x: number) {
-    this.x = x;
   }
 
-  setY(y: number) {
+  public setXY(x: number, y: number) {
+    this.x = x;
     this.y = y;
   }
 }

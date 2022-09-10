@@ -1,5 +1,5 @@
 import Canvas from "./canvas";
-import { worldTerrainSave, tileSet } from "./tilemap";
+import { worldTerrainSave, tileSet } from "./engine/tilemap";
 let cnt = 0;
 
 //Polish 하기
