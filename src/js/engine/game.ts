@@ -1,35 +1,44 @@
 import Player from "../player/player.mts";
 import Canvas from "../canvas";
-import { worldTerrainSave } from "./tilemap";
+import { worldTerrainSave } from "./world/tilemap";
 
 const player = new Player("JohnSoo", "Resource/Character/3.png");
 const framesPerSecond = 60;
 
-function startGame() {
-  const canvas = Canvas.getInstance();
-  const context = canvas.getContext();
-  const element = canvas.getElement();
+class Game {
+  private canvas = Canvas.getInstance();
+  private element = this.canvas.getElement();
+  private context = this.canvas.getContext();
+  elemLeft: number;
+  elemTop: number;
 
-  window.addEventListener("keydown", onKeyDown);
-  window.addEventListener("keyup", onKeyUp);
+  constructor() {
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+  }
 
-  let elemLeft = element.offsetLeft + element.clientLeft;
-  let elemTop = element.offsetTop + element.clientTop;
+  startGame() {
+    this.canvas = Canvas.getInstance();
+    this.element = this.canvas.getElement();
+    this.context = this.canvas.getContext();
+    this.elemLeft = this.element.offsetLeft + this.element.clientLeft;
+    this.elemTop = this.element.offsetTop + this.element.clientTop;
+    this.element.onclick = ({ pageX, pageY }) => {
+      const x = pageX - this.elemLeft;
+      const y = pageY - this.elemTop;
+      console.log(x, y);
 
-  element.onclick = ({ pageX, pageY }) => {
-    const x = pageX - elemLeft;
-    const y = pageY - elemTop;
-    console.log(x, y);
+      console.log(worldTerrainSave[x][y]);
+    };
 
-    console.log(worldTerrainSave[x][y]);
-  };
+    player.setPosition(0, 2400);
+    this.loop();
+  }
 
-  player.setPosition(0, 2400);
-
-  //몇가지 오류수정
-  setInterval(function () {
+  private loop() {
+    window.requestAnimationFrame(() => this.loop());
+    //몇가지 오류수정
     player.clearRect();
-
     // console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
 
     if (!worldTerrainSave[player.position.x][player.position.y + 16]) {
@@ -38,16 +47,16 @@ function startGame() {
       player.canJump = true;
     }
 
-    context.rect(
+    this.context.rect(
       player.position.y,
       player.position.y,
       player.width,
       player.height
     );
-    context.fillStyle = "rgba(0,0,0,0)";
-    context.fill();
+    this.context.fillStyle = "rgba(0,0,0,0)";
+    this.context.fill();
 
-    context.drawImage(
+    this.context.drawImage(
       player.sprite,
       player.position.x,
       player.position.y,
@@ -57,7 +66,7 @@ function startGame() {
     //console.log("Player Drawn Loc X : " + player.xPos + " Loc Y : " + player.yPos + " CanJump : " + player.canJump);
     //            console.log("Left : " + worldTerrainSave[player.xPos - 8][player.yPos + 15]);
     //            console.log("Right : " + worldTerrainSave[player.xPos + 8][player.yPos + 15]);
-  }, (1000 * 1) / framesPerSecond);
+  }
 }
 
 function onKeyDown({ keyCode }) {
@@ -98,4 +107,4 @@ function onKeyDown({ keyCode }) {
 
 function onKeyUp({ keyCode, type }) {}
 
-export { startGame, onKeyDown, onKeyUp, player };
+export { Game, player };

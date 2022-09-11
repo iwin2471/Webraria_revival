@@ -1,9 +1,11 @@
-import Canvas from "../canvas";
-import { worldTerrainSave, tileSet } from "./tilemap";
-import { Perlin } from "../utils/math";
+import Canvas from "../../canvas";
+import { worldTerrainSave } from "./tilemap";
+import { Perlin } from "../../utils/math";
+import { Terrain } from "./tilemap";
 
 export default class WorldGen {
   private canvas: Canvas = Canvas.getInstance();
+  private terrain: Terrain;
   cnt = 0;
 
   //Polish 하기
@@ -13,14 +15,20 @@ export default class WorldGen {
   lastLayer = [];
   layerCnt = 0;
 
-  constructor() {}
+  constructor() {
+    this.terrain = Terrain.getInstance();
+  }
 
   private makeSomeNoise(): Array<number> {
-    const perlin: Perlin = new Perlin(128, 128, this.canvas.getElement().width);
+    console.log(Canvas.getInstance().getElement());
+    const perlin: Perlin = new Perlin(
+      128,
+      128,
+      Canvas.getInstance().getElement().width
+    );
     const result = perlin.combineNoise(
       perlin.generateNoise(128, 128, 8, 2, this.canvas.getElement().width)
     );
-    console.log(result);
     return result;
   }
 
@@ -36,7 +44,6 @@ export default class WorldGen {
   }
 
   public drawWorld() {
-    this.makeSomeNoise();
     const element: HTMLCanvasElement = this.canvas.getElement();
     const context: CanvasRenderingContext2D = this.canvas.getContext();
     let tileMapString = "";
@@ -73,15 +80,23 @@ export default class WorldGen {
             if (j > height) {
               if (firstCnt == 0) {
                 if (j % 8 == 0) {
-                  var randomTop = Math.floor(Math.random() * 3);
-                  context.drawImage(tileSet[0][(0, randomTop)], i, j);
+                  let randomTop = Math.floor(Math.random() * 3);
+                  context.drawImage(
+                    this.terrain.tileMap["tile"]["dirt"][randomTop],
+                    i,
+                    j
+                  );
                   worldTerrainSave[i][j] = true;
                   firstCnt++;
                 }
               } else {
                 worldTerrainSave[i][j] = true;
                 if (j % 8 == 0) {
-                  context.drawImage(tileSet[0][(0, 3)], i, j);
+                  context.drawImage(
+                    this.terrain.tileMap["tile"]["dirt"][3],
+                    i,
+                    j
+                  );
                 }
               }
             }
