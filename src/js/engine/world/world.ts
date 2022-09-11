@@ -8,6 +8,6 @@ export default class World {
   constructor() {}
 
   public generateWorld() {
-    this.worldgen.drawWorld();
+    this.worldgen.generateWorld();
   }
 }

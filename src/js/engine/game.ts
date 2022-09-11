@@ -1,4 +1,5 @@
 import Player from "../player/player.mts";
+import World from "./world/world";
 import Canvas from "../canvas";
 import { worldTerrainSave } from "./world/tilemap";
 
@@ -9,6 +10,8 @@ class Game {
   private canvas = Canvas.getInstance();
   private element = this.canvas.getElement();
   private context = this.canvas.getContext();
+  private world = new World();
+  private frame = 0;
   elemLeft: number;
   elemTop: number;
 
@@ -26,17 +29,20 @@ class Game {
     this.element.onclick = ({ pageX, pageY }) => {
       const x = pageX - this.elemLeft;
       const y = pageY - this.elemTop;
-      console.log(x, y);
+      console.log(x / 8, y * 8);
 
-      console.log(worldTerrainSave[x][y]);
+      console.log(worldTerrainSave[pageX][pageY]);
     };
 
     player.setPosition(0, 2400);
+    this.world.generateWorld();
     this.loop();
   }
 
   private loop() {
     window.requestAnimationFrame(() => this.loop());
+    this.frame++;
+
     //몇가지 오류수정
     player.clearRect();
     // console.log(lastLayer[Math.floor(player.xPos / 8)].toString());
@@ -73,9 +79,7 @@ function onKeyDown({ keyCode }) {
   switch (keyCode) {
     case 37:
       if (
-        !worldTerrainSave[player.position.x - player.speed][
-          player.position.y + 15
-        ]
+        !worldTerrainSave[player.position.x - player.speed][player.position.y]
       ) {
         player.clearRect();
         player.position.x -= player.speed;
@@ -90,17 +94,17 @@ function onKeyDown({ keyCode }) {
       break;
     case 39:
       if (
-        !worldTerrainSave[player.position.x + player.speed][
-          player.position.y + 15
-        ]
+        !worldTerrainSave[player.position.x + player.speed][player.position.y]
       ) {
+        console.log(`${player.position.x} ${player.position.y}`);
+
         player.clearRect();
         player.position.x += player.speed;
       }
       break;
     case 40:
       player.clearRect();
-      player.position.y += 10;
+      player.position.y += player.jumpForce;
       break;
   }
 }

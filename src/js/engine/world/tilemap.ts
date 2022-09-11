@@ -6,6 +6,7 @@ for (let i = 0; i < 1920 * 5; i++) {
 
 class Terrain {
   private static instance: Terrain = new Terrain();
+  static readonly tileSize = 8;
   readonly tileMap: object = {
     tile: {
       dirt: [new Image(), new Image(), new Image(), new Image()],
