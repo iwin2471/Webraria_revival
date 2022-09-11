@@ -9,24 +9,21 @@ var lastLayer = [];
 var layerCnt = 0;
 
 function drawWorld(){
-    var tileMapString = "";
-    var perc = 0.1;
-    var height;
-    var heightCnt = 0;
-    var firstCnt = 0;
-    var mapHeight = Context.canvas.height * 5;
-    var mapWidth = Context.canvas.width * 5;
+    let tileMapString = "";
+    let perc = 0.1;
+    let height;
+    let heightCnt = 0;
+    let firstCnt = 0;
+    let mapHeight = Context.canvas.height * 5;
+    let mapWidth = Context.canvas.width * 5;
     
-    setInterval(function(){
+    // setInterval(function(){
         while(cnt==0){
             
-            Context.context.clearRect(0, 0, mapWidth, mapHeight);
-            
+            Context.context.clearRect(0, 0, mapWidth, mapHeight);    
             height = mapHeight / 2;
-        
-            for(var i = 0; i < mapWidth; i+=8){
-                
-                if(Math.ceil(Math.random() * 10) > perc){
+            for(let i = 0; i < mapWidth; i+=8) {
+                if(Math.ceil(Math.random() * 10) > perc) {
                     if(Math.floor(Math.random() * 2) == 0){
                         height -= Math.ceil(Math.random() * 16);
                     } else {
@@ -62,5 +59,5 @@ function drawWorld(){
         console.log(tileMapString);
         cnt++;
         }
-    }, 500);
+    // }, 500);
 }
