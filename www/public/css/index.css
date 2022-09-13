@@ -17,8 +17,8 @@ h1{
     font-style: thin;
     font-size: 60px;
 }
-#canvas-container{
-    width: 100%;
+#main_canvas{
+    width: 100vw;
     height: 100vh;
     text-align:center;
 }

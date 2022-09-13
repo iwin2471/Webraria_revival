@@ -1,11 +1,8 @@
-const worldTerrainSave = new Array();
+import Canvas from "../../canvas";
 
-for (let i = 0; i < 1920 * 5; i++) {
-  worldTerrainSave[i] = new Array();
-}
-
-class Terrain {
-  private static instance: Terrain = new Terrain();
+export default class Terrain {
+  private static instance: Terrain;
+  public worldTerrainSave: Array<Array<Boolean>> = new Array();
   static readonly tileSize = 8;
   readonly tileMap: object = {
     tile: {
@@ -42,11 +39,16 @@ class Terrain {
     this.tileMap["ore"][2].src = "Resource/Tiles/Mineral/dia2.png";
     this.tileMap["ore"][3].src = "Resource/Tiles/object/stone.png";
     this.tileMap["ore"][4].src = "Resource/Tiles/dirt/floor_dirt04.png";
+
+    for (let i = 0; i < Canvas.getInstance().getElement().width; i++) {
+      this.worldTerrainSave[i] = new Array();
+    }
   }
 
   public static getInstance() {
+    if(this.instance == null) {
+      this.instance = new Terrain()
+    }
     return this.instance;
   }
 }
-
-export { worldTerrainSave, Terrain };

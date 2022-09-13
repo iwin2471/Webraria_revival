@@ -1,5 +1,4 @@
 import WorldGen from "./worldgen";
-import { Terrain } from "./tilemap";
 
 export default class World {
   private worldgen: WorldGen = new WorldGen();

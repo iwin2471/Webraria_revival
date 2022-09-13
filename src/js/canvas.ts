@@ -17,8 +17,8 @@ export default class Canvas {
   public initElement(canvasId: string) {
     this.element = document.getElementById(canvasId) as HTMLCanvasElement;
     this.context = this.element.getContext("2d");
-    this.context.scale(2, 2);
-    this.context.translate(0, -2500);
+    this.element.height = this.element.clientHeight;
+    this.element.width = this.element.clientWidth;
   }
 
   public getContext() {
