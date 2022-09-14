@@ -1,4 +1,4 @@
-import Canvas from "../../canvas";
+import Canvas from "../canvas";
 import { Perlin } from "../../utils/math";
 import Terrain from "./tilemap";
 
@@ -30,13 +30,13 @@ export default class WorldGen {
     this.terrain = Terrain.getInstance();
     const noises: Array<number> = this.makeSomeNoise();
     const element: HTMLCanvasElement = this.canvas.getElement();
-    const context: CanvasRenderingContext2D = this.canvas.getContext();
+    const context: WebGL2RenderingContext = this.canvas.getContext();
     const terrain: Terrain = Terrain.getInstance();
     let mapHeight = element.height;
     let mapWidth = element.width;
     let height = mapHeight / 2;
     let isTopSet = false;
-    context.clearRect(0, 0, mapWidth, mapHeight);
+    // context.clearRect(0, 0, mapWidth, mapHeight);
 
     setTimeout(() => {
       for (let i = 0; i < mapWidth; i++) {

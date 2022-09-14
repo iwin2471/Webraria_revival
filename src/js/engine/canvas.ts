@@ -1,6 +1,6 @@
 export default class Canvas {
   private element: HTMLCanvasElement;
-  private context: CanvasRenderingContext2D;
+  private context: WebGL2RenderingContext;
   private static instance: Canvas;
   private constructor() {}
 
@@ -16,7 +16,7 @@ export default class Canvas {
   //스타듀, 샌드박스, 테라리아, 노맨스스카이, 굴착기
   public initElement(canvasId: string) {
     this.element = document.getElementById(canvasId) as HTMLCanvasElement;
-    this.context = this.element.getContext("2d");
+    this.context = this.element.getContext("webgl2");
     this.element.height = this.element.clientHeight;
     this.element.width = this.element.clientWidth;
   }

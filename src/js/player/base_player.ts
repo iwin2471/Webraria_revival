@@ -1,13 +1,15 @@
 import Position from "./Position.mts";
+import Behavior from "../engine/behaviorable";
 import Movable from "./movable";
 import Drawable from "../engine/drawable";
-import Canvas from "../canvas";
+import Canvas from "../engine/canvas";
 
-export default abstract class BasePlayer implements Movable, Drawable {
+export default abstract class BasePlayer implements Movable, Drawable, Behavior {
   name: String;
   sprite: HTMLImageElement = new Image();
   loaded: boolean = false;
   movementSpeed: number = 8;
+  canJump: boolean = false;
   readonly position: Position = new Position();
   readonly width: number = 8;
   readonly height: number = 16;
@@ -44,5 +46,9 @@ export default abstract class BasePlayer implements Movable, Drawable {
 
   protected isMonster(): boolean {
     return false;
+  }
+
+  onUpdate(): void {
+    return;
   }
 }
